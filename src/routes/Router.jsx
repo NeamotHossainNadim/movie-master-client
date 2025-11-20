@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App";
+import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import AllMovies from "../pages/AllMovies";
 import MovieDetails from "../pages/MovieDetails";
@@ -15,24 +15,29 @@ import TestApi from "../pages/TestApi";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <MainLayout />,
     children: [
       { index: true, element: <Home /> },
-      { path: "movies", element: <AllMovies /> },
+
+      // ✅ Public Routes
+      { path: "all-movies", element: <AllMovies /> },
       { path: "movies/:id", element: <MovieDetails /> },
-      { path: "test-api", element: <TestApi /> },   // ✅ API Test Route
+      { path: "test-api", element: <TestApi /> },
       { path: "login", element: <Login /> },
       { path: "register", element: <Register /> },
-      { path: "*", element: <NotFound /> },
 
+      // ✅ Protected Routes
       {
         element: <PrivateRoute />,
         children: [
-          { path: "movies/add", element: <AddMovie /> },
-          { path: "movies/my-collection", element: <MyCollection /> },
-          { path: "movies/update/:id", element: <UpdateMovie /> }
-        ]
-      }
-    ]
-  }
+          { path: "add-movie", element: <AddMovie /> },
+          { path: "my-collection", element: <MyCollection /> },
+          { path: "update-movie/:id", element: <UpdateMovie /> },
+        ],
+      },
+
+      // ✅ Not Found
+      { path: "*", element: <NotFound /> },
+    ],
+  },
 ]);

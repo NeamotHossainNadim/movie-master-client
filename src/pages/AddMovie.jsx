@@ -41,37 +41,151 @@ export default function AddMovie() {
     }
   };
 
-  return (
-    <div className="max-w-2xl mx-auto p-4">
-      <h2 className="text-2xl font-semibold mb-4">Add Movie</h2>
+return (
+  <div className="min-h-screen bg-gray-50 py-10 px-4">
+    <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+      <h2 className="text-3xl font-bold text-gray-800 mb-2">
+        🎬 Add New Movie
+      </h2>
+      <p className="text-gray-500 mb-6">
+        Fill in the details below to add a new movie.
+      </p>
 
-      <form className="space-y-3" onSubmit={handleSubmit}>
-        <input name="title" className="w-full p-2 border rounded" placeholder="Title" required />
-        <input name="genre" className="w-full p-2 border rounded" placeholder="Genre" required />
+      <form className="space-y-5" onSubmit={handleSubmit}>
+        {/* Title & Genre */}
+        <div className="grid md:grid-cols-2 gap-4">
+          <div>
+            <label className="text-sm text-gray-600">Movie Title</label>
+            <input
+              name="title"
+              className="w-full mt-1 p-3 rounded-xl border focus:ring-2 focus:ring-indigo-500 outline-none"
+              placeholder="Enter movie title"
+              required
+            />
+          </div>
 
-        <div className="grid grid-cols-2 gap-3">
-          <input name="releaseYear" className="p-2 border rounded" placeholder="Year" required />
-          <input name="rating" className="p-2 border rounded" placeholder="Rating" />
+          <div>
+            <label className="text-sm text-gray-600">Genre</label>
+            <input
+              name="genre"
+              className="w-full mt-1 p-3 rounded-xl border focus:ring-2 focus:ring-indigo-500 outline-none"
+              placeholder="Action, Drama, Sci-Fi..."
+              required
+            />
+          </div>
         </div>
 
-        <input name="director" className="w-full p-2 border rounded" placeholder="Director" />
-        <input name="cast" className="w-full p-2 border rounded" placeholder="Cast" />
-        <input name="duration" className="w-full p-2 border rounded" placeholder="Duration (mins)" />
-        <input name="posterUrl" className="w-full p-2 border rounded" placeholder="Poster URL" />
+        {/* Year & Rating */}
+        <div className="grid md:grid-cols-2 gap-4">
+          <div>
+            <label className="text-sm text-gray-600">Release Year</label>
+            <input
+              name="releaseYear"
+              type="number"
+              className="w-full mt-1 p-3 rounded-xl border focus:ring-2 focus:ring-indigo-500 outline-none"
+              placeholder="2024"
+              required
+            />
+          </div>
 
-        <textarea name="plotSummary" className="w-full p-2 border rounded" placeholder="Plot summary" />
+          <div>
+            <label className="text-sm text-gray-600">Rating</label>
+            <input
+              name="rating"
+              type="number"
+              step="0.1"
+              className="w-full mt-1 p-3 rounded-xl border focus:ring-2 focus:ring-indigo-500 outline-none"
+              placeholder="8.5"
+            />
+          </div>
+        </div>
 
-        <input name="language" className="w-full p-2 border rounded" placeholder="Language" />
-        <input name="country" className="w-full p-2 border rounded" placeholder="Country" />
+        {/* Director & Cast */}
+        <div className="grid md:grid-cols-2 gap-4">
+          <div>
+            <label className="text-sm text-gray-600">Director</label>
+            <input
+              name="director"
+              className="w-full mt-1 p-3 rounded-xl border focus:ring-2 focus:ring-indigo-500 outline-none"
+              placeholder="Director name"
+            />
+          </div>
 
+          <div>
+            <label className="text-sm text-gray-600">Cast</label>
+            <input
+              name="cast"
+              className="w-full mt-1 p-3 rounded-xl border focus:ring-2 focus:ring-indigo-500 outline-none"
+              placeholder="Main actors"
+            />
+          </div>
+        </div>
+
+        {/* Duration & Poster */}
+        <div className="grid md:grid-cols-2 gap-4">
+          <div>
+            <label className="text-sm text-gray-600">Duration (minutes)</label>
+            <input
+              name="duration"
+              type="number"
+              className="w-full mt-1 p-3 rounded-xl border focus:ring-2 focus:ring-indigo-500 outline-none"
+              placeholder="120"
+            />
+          </div>
+
+          <div>
+            <label className="text-sm text-gray-600">Poster Image URL</label>
+            <input
+              name="posterUrl"
+              className="w-full mt-1 p-3 rounded-xl border focus:ring-2 focus:ring-indigo-500 outline-none"
+              placeholder="https://image-url.com"
+            />
+          </div>
+        </div>
+
+        {/* Plot Summary */}
+        <div>
+          <label className="text-sm text-gray-600">Plot Summary</label>
+          <textarea
+            name="plotSummary"
+            rows="4"
+            className="w-full mt-1 p-3 rounded-xl border focus:ring-2 focus:ring-indigo-500 outline-none"
+            placeholder="Write short plot summary..."
+          ></textarea>
+        </div>
+
+        {/* Language & Country */}
+        <div className="grid md:grid-cols-2 gap-4">
+          <div>
+            <label className="text-sm text-gray-600">Language</label>
+            <input
+              name="language"
+              className="w-full mt-1 p-3 rounded-xl border focus:ring-2 focus:ring-indigo-500 outline-none"
+              placeholder="English, Hindi, Korean..."
+            />
+          </div>
+
+          <div>
+            <label className="text-sm text-gray-600">Country</label>
+            <input
+              name="country"
+              className="w-full mt-1 p-3 rounded-xl border focus:ring-2 focus:ring-indigo-500 outline-none"
+              placeholder="USA, Korea, India..."
+            />
+          </div>
+        </div>
+
+        {/* Submit Button */}
         <button
           type="submit"
           disabled={saving}
-          className="bg-indigo-600 text-white px-4 py-2 rounded"
+          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl transition duration-200"
         >
-          {saving ? "Saving..." : "Add Movie"}
+          {saving ? "Saving..." : "🎬 Add Movie"}
         </button>
       </form>
     </div>
-  );
+  </div>
+);
+
 }
