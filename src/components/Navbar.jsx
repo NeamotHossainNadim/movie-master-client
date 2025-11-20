@@ -30,7 +30,7 @@ export default function Navbar() {
 
         
         <Link to="/" className="text-2xl font-extrabold tracking-wide flex items-center gap-2">
-          🎬 MovieMaster
+          MovieMaster
         </Link>
 
         
