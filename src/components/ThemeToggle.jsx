@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Navbar = () => {
+const ThemeToggle = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default ThemeToggle
