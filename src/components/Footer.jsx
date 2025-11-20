@@ -9,7 +9,7 @@ const Footer = () => {
 
         <div>
           <h2 className="text-3xl font-extrabold mb-3 flex items-center gap-2">
-            🎬 MovieMaster
+            MovieMaster
           </h2>
           <p className="text-white/80 leading-relaxed">
             Discover, explore and manage your favorite movies. Your ultimate
@@ -77,7 +77,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-white/20 py-4 text-center text-sm text-white/70">
         © {new Date().getFullYear()} MovieMaster. All rights reserved.
       </div>
