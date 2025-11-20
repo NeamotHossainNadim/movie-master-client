@@ -46,7 +46,6 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
 
-          {/* Social Icons */}
           <div className="flex gap-4 mb-4">
             <a href="#" className="hover:scale-110 transition">
               <Facebook />
@@ -62,7 +61,6 @@ const Footer = () => {
             </a>
           </div>
 
-          {/* Newsletter */}
           <p className="text-sm text-white/80 mb-3">
             Subscribe to get latest movie updates
           </p>
