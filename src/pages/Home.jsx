@@ -16,10 +16,9 @@ const Home = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-10 px-4">
       <div className="max-w-7xl mx-auto">
 
-        {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-extrabold text-gray-800 tracking-tight">
-            🎬 Discover Movies
+            Discover Movies
           </h1>
           <p className="text-gray-500 mt-2 text-sm sm:text-base">
             Explore trending and popular movies curated for you
@@ -37,7 +36,7 @@ const Home = () => {
                 key={movie._id}
                 className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden flex flex-col"
               >
-                {/* Poster */}
+
                 <div className="relative w-full h-64 bg-gray-100 overflow-hidden">
                   <img
                     src={movie.posterUrl || "https://via.placeholder.com/300x400?text=No+Image"}
@@ -47,7 +46,6 @@ const Home = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
                 </div>
 
-                {/* Content */}
                 <div className="p-5 flex flex-col flex-grow">
                   <h2 className="text-lg font-bold text-gray-800 mb-1 truncate">
                     {movie.title}
