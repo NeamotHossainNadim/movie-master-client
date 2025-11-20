@@ -150,7 +150,6 @@ return (
           ></textarea>
         </div>
 
-        {/* Language & Country */}
         <div className="grid md:grid-cols-2 gap-4">
           <div>
             <label className="text-sm text-gray-600">Language</label>
@@ -171,13 +170,12 @@ return (
           </div>
         </div>
 
-        {/* Submit Button */}
         <button
           type="submit"
           disabled={saving}
           className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl transition duration-200"
         >
-          {saving ? "Saving..." : "🎬 Add Movie"}
+          {saving ? "Saving..." : "Add Movie"}
         </button>
       </form>
     </div>
