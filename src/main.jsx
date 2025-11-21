@@ -5,7 +5,7 @@ import { router } from './routes/Router'
 import AuthProvider from './context/AuthProvider'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import './index.css'   // ✅ ADD THIS LINE (for Tailwind)
+import './index.css'  
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

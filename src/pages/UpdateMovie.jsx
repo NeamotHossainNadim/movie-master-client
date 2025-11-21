@@ -35,9 +35,9 @@ const UpdateMovie = () => {
 
     try {
       await axios.put(`/movies/${id}`, updated);
-      toast.success("Movie updated ✅");
+      toast.success("Movie updated");
     } catch (err) {
-      toast.error("Update failed ❌");
+      toast.error("Update failed");
     }
   };
 

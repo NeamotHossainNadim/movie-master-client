@@ -39,7 +39,7 @@ const MyCollection = () => {
     <div className="min-h-screen bg-gray-50 py-10 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-6 text-indigo-600">
-          🎬 My Movie Collection
+          My Movie Collection
         </h2>
 
         {movies.length === 0 ? (
@@ -66,7 +66,7 @@ const MyCollection = () => {
                   </p>
 
                   <div className="mt-4 flex justify-between items-center">
-                    {/* ✅ View Button - Correct */}
+            
                     <Link
                       to={`/movies/${movie._id}`}
                       className="text-indigo-600 font-medium hover:underline"
@@ -74,7 +74,7 @@ const MyCollection = () => {
                       View
                     </Link>
 
-                    {/* ✅ Edit Button - FIXED */}
+
                     <Link
                       to={`/update-movie/${movie._id}`}
                       className="text-sm bg-indigo-500 text-white px-3 py-1 rounded-lg hover:bg-indigo-600 transition"

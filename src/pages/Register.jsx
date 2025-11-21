@@ -17,7 +17,7 @@ export default function Register() {
 
     try {
       await createUser(email, password);
-      toast.success("✅ Account created!");
+      toast.success("Account created!");
       navigate("/");
     } catch (error) {
       toast.error(error.message);
@@ -26,14 +26,13 @@ export default function Register() {
     }
   };
 
-  // ✅ GOOGLE LOGIN
   const handleGoogleLogin = async () => {
     try {
       await googleLogin();
-      toast.success("✅ Logged in with Google!");
+      toast.success("Logged in with Google!");
       navigate("/");
     } catch (error) {
-      toast.error("❌ Google login failed");
+      toast.error("Google login failed");
     }
   };
 
@@ -48,7 +47,6 @@ export default function Register() {
             Create Account
           </h2>
 
-          {/* Email */}
           <div className="mb-4">
             <input
               type="email"
@@ -59,7 +57,6 @@ export default function Register() {
             />
           </div>
 
-          {/* Password */}
           <div className="mb-6">
             <input
               type="password"
@@ -70,7 +67,6 @@ export default function Register() {
             />
           </div>
 
-          {/* Email Register Button */}
           <button
             disabled={loading}
             className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-xl mb-4"
@@ -78,14 +74,12 @@ export default function Register() {
             {loading ? "Creating..." : "Create Account"}
           </button>
 
-          {/* OR Divider */}
           <div className="flex items-center my-4">
             <div className="flex-grow h-px bg-gray-300"></div>
             <span className="px-3 text-gray-500 text-sm">OR</span>
             <div className="flex-grow h-px bg-gray-300"></div>
           </div>
 
-          {/* ✅ GOOGLE BUTTON */}
           <button
             type="button"
             onClick={handleGoogleLogin}
@@ -99,7 +93,6 @@ export default function Register() {
             Continue with Google
           </button>
 
-          {/* Footer */}
           <p className="mt-6 text-center text-sm text-gray-600">
             Already have an account?{" "}
             <Link to="/login" className="text-indigo-600 font-semibold">

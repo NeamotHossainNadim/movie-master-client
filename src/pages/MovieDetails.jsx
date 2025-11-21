@@ -29,7 +29,6 @@ export default function MovieDetails() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-10">
       <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
 
-        {/* Movie Banner */}
         <div className="relative h-[400px] w-full bg-gray-200">
           <img
             src={
@@ -46,9 +45,8 @@ export default function MovieDetails() {
           </div>
         </div>
 
-        {/* Content */}
         <div className="p-8 grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Left Info */}
+      
           <div className="md:col-span-2 space-y-6">
             <div>
               <h2 className="text-2xl font-bold text-gray-800 mb-2">
@@ -82,7 +80,7 @@ export default function MovieDetails() {
               </p>
               <p>
                 <span className="font-semibold text-gray-800">Rating:</span>{" "}
-                ⭐ {movie.rating}/10
+                 {movie.rating}/10
               </p>
               <p>
                 <span className="font-semibold text-gray-800">Language:</span>{" "}
@@ -95,7 +93,6 @@ export default function MovieDetails() {
             </div>
           </div>
 
-          {/* Right Sidebar */}
           <div className="space-y-6">
             <div className="bg-gray-50 p-6 rounded-2xl shadow-inner">
               <h3 className="text-lg font-semibold text-gray-800 mb-3">
@@ -109,7 +106,7 @@ export default function MovieDetails() {
                   <span className="font-medium">Year:</span> {movie.releaseYear}
                 </li>
                 <li>
-                  <span className="font-medium">Rating:</span> ⭐ {movie.rating}/10
+                  <span className="font-medium">Rating:</span> {movie.rating}/10
                 </li>
               </ul>
             </div>

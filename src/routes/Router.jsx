@@ -19,14 +19,12 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
 
-      // ✅ Public Routes
       { path: "all-movies", element: <AllMovies /> },
       { path: "movies/:id", element: <MovieDetails /> },
       { path: "test-api", element: <TestApi /> },
       { path: "login", element: <Login /> },
       { path: "register", element: <Register /> },
 
-      // ✅ Protected Routes
       {
         element: <PrivateRoute />,
         children: [
@@ -36,7 +34,6 @@ export const router = createBrowserRouter([
         ],
       },
 
-      // ✅ Not Found
       { path: "*", element: <NotFound /> },
     ],
   },

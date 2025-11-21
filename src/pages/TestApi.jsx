@@ -6,8 +6,8 @@ const TestApi = () => {
   useEffect(() => {
     fetch(import.meta.env.VITE_API_URL + "/test")
       .then((res) => res.json())
-      .then((data) => setStatus(data.message || "✅ API Connected"))
-      .catch(() => setStatus("❌ API Connection Failed"));
+      .then((data) => setStatus(data.message || "API Connected"))
+      .catch(() => setStatus("API Connection Failed"));
   }, []);
 
   return (
