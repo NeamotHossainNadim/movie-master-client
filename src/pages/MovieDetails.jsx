@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../hooks/useAxios";
 
 export default function MovieDetails() {
   const { id } = useParams();
@@ -9,7 +9,7 @@ export default function MovieDetails() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/movies/${id}`)
+      .get(`/movies/${id}`)
       .then((res) => {
         setMovie(res.data);
         setLoading(false);
@@ -31,10 +31,7 @@ export default function MovieDetails() {
 
         <div className="relative h-[400px] w-full bg-gray-200">
           <img
-            src={
-              movie.posterUrl ||
-              "https://via.placeholder.com/1200x600?text=No+Image"
-            }
+            src={movie.posterUrl || "/placeholder.jpg"}
             alt={movie.title}
             className="w-full h-full object-cover"
           />
@@ -46,7 +43,6 @@ export default function MovieDetails() {
         </div>
 
         <div className="p-8 grid grid-cols-1 md:grid-cols-3 gap-10">
-      
           <div className="md:col-span-2 space-y-6">
             <div>
               <h2 className="text-2xl font-bold text-gray-800 mb-2">
@@ -58,38 +54,14 @@ export default function MovieDetails() {
             </div>
 
             <div className="grid grid-cols-2 gap-6 text-sm text-gray-600">
-              <p>
-                <span className="font-semibold text-gray-800">Genre:</span>{" "}
-                {movie.genre}
-              </p>
-              <p>
-                <span className="font-semibold text-gray-800">Release Year:</span>{" "}
-                {movie.releaseYear}
-              </p>
-              <p>
-                <span className="font-semibold text-gray-800">Director:</span>{" "}
-                {movie.director}
-              </p>
-              <p>
-                <span className="font-semibold text-gray-800">Cast:</span>{" "}
-                {movie.cast}
-              </p>
-              <p>
-                <span className="font-semibold text-gray-800">Duration:</span>{" "}
-                {movie.duration} mins
-              </p>
-              <p>
-                <span className="font-semibold text-gray-800">Rating:</span>{" "}
-                 {movie.rating}/10
-              </p>
-              <p>
-                <span className="font-semibold text-gray-800">Language:</span>{" "}
-                {movie.language}
-              </p>
-              <p>
-                <span className="font-semibold text-gray-800">Country:</span>{" "}
-                {movie.country}
-              </p>
+              <p><span className="font-semibold text-gray-800">Genre:</span> {movie.genre}</p>
+              <p><span className="font-semibold text-gray-800">Release Year:</span> {movie.releaseYear}</p>
+              <p><span className="font-semibold text-gray-800">Director:</span> {movie.director}</p>
+              <p><span className="font-semibold text-gray-800">Cast:</span> {movie.cast}</p>
+              <p><span className="font-semibold text-gray-800">Duration:</span> {movie.duration} mins</p>
+              <p><span className="font-semibold text-gray-800">Rating:</span> {movie.rating}/10</p>
+              <p><span className="font-semibold text-gray-800">Language:</span> {movie.language}</p>
+              <p><span className="font-semibold text-gray-800">Country:</span> {movie.country}</p>
             </div>
           </div>
 
@@ -99,20 +71,14 @@ export default function MovieDetails() {
                 Movie Info
               </h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>
-                  <span className="font-medium">Genre:</span> {movie.genre}
-                </li>
-                <li>
-                  <span className="font-medium">Year:</span> {movie.releaseYear}
-                </li>
-                <li>
-                  <span className="font-medium">Rating:</span> {movie.rating}/10
-                </li>
+                <li><span className="font-medium">Genre:</span> {movie.genre}</li>
+                <li><span className="font-medium">Year:</span> {movie.releaseYear}</li>
+                <li><span className="font-medium">Rating:</span> {movie.rating}/10</li>
               </ul>
             </div>
 
             <Link
-              to="/movies"
+              to="/all-movies"
               className="block text-center bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-semibold transition shadow-lg"
             >
               ← Back to Movies

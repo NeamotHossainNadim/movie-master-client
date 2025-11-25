@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import img from "./twitter.png"
 
 const Footer = () => {
   return (
@@ -47,16 +48,16 @@ const Footer = () => {
           <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
 
           <div className="flex gap-4 mb-4">
-            <a href="#" className="hover:scale-110 transition">
+            <a href="https://www.facebook.com/" target="blank" className="hover:scale-110 transition">
               <Facebook />
             </a>
-            <a href="#" className="hover:scale-110 transition">
-              <Twitter />
+            <a href="https://x.com/" target="blank" className="hover:scale-110 transition">
+            <img src={img} alt="Twitter" className="w-6 h-6" />
             </a>
-            <a href="#" className="hover:scale-110 transition">
+            <a href="https://www.instagram.com/" target="blank" className="hover:scale-110 transition">
               <Instagram />
             </a>
-            <a href="#" className="hover:scale-110 transition">
+            <a href="https://www.youtube.com/" target="blank" className="hover:scale-110 transition">
               <Youtube />
             </a>
           </div>

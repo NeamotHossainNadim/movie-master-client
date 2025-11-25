@@ -9,7 +9,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 
-export const AuthContext = createContext();
+export const AuthContext = createContext(null);
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -18,18 +18,22 @@ export default function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const loginUser = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   const googleLogin = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 
   const logOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
 
@@ -53,7 +57,7 @@ export default function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider value={authInfo}>
-      {children}
+      {!loading && children}
     </AuthContext.Provider>
   );
 }
